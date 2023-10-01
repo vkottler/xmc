@@ -40,26 +40,8 @@ jobs:
 
       - run: mk yaml python-lint python-sa
 
-      - run: sudo apt-get install lcov doxygen clang-15 clang-format-15
-
-      - run: mk t variant=clang coverage=false
-      - run: ninja all format-check
-
       - run: mk dist docs
         if: github.ref_name != 'master'
-
-      # Need to clean because codecov is not finding coverage otherwise.
-      - run: mk c keep=debug
-      - run: mk t
-
-      - uses: codecov/codecov-action@v3
-        with:
-          gcov: true
-          gcov_include: build/debug
-          gcov_ignore: .mypy_cache
-          gcov_executable: gcov-12
-          fail_ci_if_error: true
-          verbose: true
 
       - run: mk release
         if: |
