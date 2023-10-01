@@ -1,6 +1,3 @@
-/* toolchain */
-#include <iostream>
-
 /* internal */
 #include "example/sample.h"
 
@@ -11,8 +8,6 @@ int test1(int a, int b)
 
 int main(void)
 {
-    std::cout << test1(1, 2) << std::endl;
-
     Example::method1();
     Example::method2();
 
@@ -21,7 +16,6 @@ int main(void)
     {
         a *= 2.0f;
         a /= 2.0f;
-        std::cout << a << std::endl;
     }
 
     return 0;

@@ -1,7 +1,7 @@
 # =====================================
 # generator=datazen
 # version=3.1.3
-# hash=49b0fcdcf023e1a8720a1d62f506b7dc
+# hash=9dc7cb17cefe5a0b8149ae409d5104cf
 # =====================================
 ---
 project:
@@ -10,14 +10,16 @@ project:
   github: {owner: &self vkottler}
   version: {major: 0, minor: 1, patch: 0}
 
+includes:
+  - local/xmc.yaml
+
 variants:
+  # Disable regular targets.
   debug:
-    suffix: "-12"
+    enabled: false
   opt:
-    suffix: "-12"
-
+    enabled: false
   clang:
-    suffix: &clang_version "-15"
-
+    enabled: false
   clang-opt:
-    suffix: *clang_version
+    enabled: false

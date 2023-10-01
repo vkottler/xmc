@@ -1,0 +1,16 @@
+---
+default_target: xmc
+
+cflag_groups:
+  picolib: [-specs=picolibcpp.specs]
+  m4: [-mcpu=cortex-m4]
+  hwfp: [-mfpu=auto, -mfloat-abi=hard]
+  armv7emfp: [-march=armv7e-m+fp]
+
+ldflag_groups:
+  xmc: [-Tsrc/link.ld]
+
+variants:
+  xmc:
+    prefix: "./toolchains/arm-picolibc-eabi/bin/arm-picolibc-eabi-"
+    cflag_groups: [picolib, m4, hwfp, armv7emfp]
