@@ -12,5 +12,5 @@ ldflag_groups:
 
 variants:
   xmc:
-    prefix: "./toolchains/arm-picolibc-eabi/bin/arm-picolibc-eabi-"
+    prefix: "arm-picolibc-eabi-"
     cflag_groups: [picolib, m4, hwfp, armv7emfp]
