@@ -2,11 +2,11 @@
     =====================================
     generator=datazen
     version=3.1.3
-    hash=594c82e5da1a26238d1cab43b9f09a8b
+    hash=c2b6acaf2ef8ce682bf36f4fbf743ce8
     =====================================
 -->
 
-# xmc ([0.1.0](https://github.com/vkottler/xmc/releases/tag/0.1.0))
+# xmc ([0.1.1](https://github.com/vkottler/xmc/releases/tag/0.1.1))
 
 [![codecov](https://codecov.io/gh/vkottler/xmc/branch/master/graph/badge.svg)](https://codecov.io/gh/vkottler/xmc)
 ![Build Status](https://github.com/vkottler/xmc/actions/workflows/yambs-project.yml/badge.svg)
