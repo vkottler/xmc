@@ -39,8 +39,12 @@ jobs:
       - run: mk dz-sync
 
       - run: mk yaml python-lint python-sa
+      - run: sudo apt-get install doxygen clang-format-15
+      - run: mk download-toolchains
+      - run: mk g
+      - run: ninja all format-check
 
-      - run: mk dist docs
+      - run: mk dist=xmc docs
         if: github.ref_name != 'master'
 
       - run: mk release

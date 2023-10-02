@@ -1,3 +1,9 @@
+/**
+ * \file
+ *
+ * \brief Stubs for library hooks.
+ */
+
 /* toolchain */
 #include <stdio.h>
 
