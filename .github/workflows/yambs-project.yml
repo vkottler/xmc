@@ -44,7 +44,7 @@ jobs:
       - run: mk g
       - run: ninja all format-check
 
-      - run: mk dist docs
+      - run: mk dist=xmc docs
         if: github.ref_name != 'master'
 
       - run: mk release
