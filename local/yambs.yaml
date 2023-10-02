@@ -11,3 +11,7 @@ variants:
   xmc:
     prefix: "arm-picolibc-eabi-"
     cflag_groups: [picolib, m4, hwfp, armv7emfp]
+
+dependencies:
+  - github: {repo: coral, owner: vkottler}
+    as_source: true
