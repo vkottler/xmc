@@ -39,6 +39,8 @@ jobs:
       - run: mk dz-sync
 
       - run: mk yaml python-lint python-sa
+      - run: mk download-toolchains
+      - run: ninja all format-check
 
       - run: mk dist docs
         if: github.ref_name != 'master'
