@@ -39,6 +39,7 @@ jobs:
       - run: mk dz-sync
 
       - run: mk yaml python-lint python-sa
+      - run: sudo apt-get install clang-format-15
       - run: mk download-toolchains
       - run: mk g
       - run: ninja all format-check
