@@ -40,6 +40,7 @@ jobs:
 
       - run: mk yaml python-lint python-sa
       - run: mk download-toolchains
+      - run: mk g
       - run: ninja all format-check
 
       - run: mk dist docs
