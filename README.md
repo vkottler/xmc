@@ -1,8 +1,8 @@
 <!--
     =====================================
     generator=datazen
-    version=3.1.3
-    hash=c2b6acaf2ef8ce682bf36f4fbf743ce8
+    version=3.1.4
+    hash=06344b757411ea1a4ce3d80d70172a2b
     =====================================
 -->
 
@@ -12,3 +12,20 @@
 ![Build Status](https://github.com/vkottler/xmc/actions/workflows/yambs-project.yml/badge.svg)
 
 *A firmware project for Infineon XMC devices.*
+
+## Workflow
+
+Install [vmklib](https://github.com/vkottler/vmklib) such that you can
+`mk --version` (a `pip install vmklib` to your desired Python environment is
+all that's needed).
+
+From a fresh checkout:
+
+```
+git submodule update --init
+mk dz-sync
+mk download-toolchains
+mk g
+```
+
+This should result in fully compiled code that you can now use or add to.
