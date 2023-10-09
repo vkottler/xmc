@@ -13,5 +13,7 @@ variants:
     cflag_groups: [picolib, m4, hwfp, armv7emfp]
 
 dependencies:
-  - github: {repo: coral, owner: vkottler}
+  - github: {repo: coral, owner: &self vkottler}
+    as_source: true
+  - github: {repo: hal-xmc4700, owner: *self}
     as_source: true
