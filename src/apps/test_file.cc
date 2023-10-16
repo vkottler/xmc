@@ -9,7 +9,7 @@ void led2_state(bool state)
     }
     else
     {
-        XMC4700::PORT5->clear_OMR_PS8();
+        XMC4700::PORT5->set_OMR_PR8();
     }
 }
 
@@ -21,7 +21,7 @@ void led1_state(bool state)
     }
     else
     {
-        XMC4700::PORT5->clear_OMR_PS9();
+        XMC4700::PORT5->set_OMR_PR9();
     }
 }
 
