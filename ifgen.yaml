@@ -1,0 +1,94 @@
+---
+namespace: [ARM]
+
+structs:
+  Register:
+    description: A generic 32-bit container.
+    fields:
+      - name: u32
+        type: &reg_type uint32_t
+        alternates:
+          - {name: u8, type: uint8_t}
+          - {name: u16, type: uint16_t}
+
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
+
+  itm:
+    description: Instrumentation Trace Macrocell Unit
+    instances:
+      - name: ITM
+        address: '0xE0000000'
+    fields:
+      - name: STIM
+        type: Register
+        array_length: 32
+
+      - name: TER
+        type: *reg_type
+        expected_offset: 0xE00
+
+      - name: TPR
+        type: *reg_type
+        expected_offset: 0xE40
+
+      - name: TCR
+        type: *reg_type
+        expected_offset: 0xE80
+
+      - name: PID4
+        type: *reg_type
+        expected_offset: 0xFD0
+
+      - name: PID5
+        type: *reg_type
+        expected_offset: 0xFD4
+
+      - name: PID6
+        type: *reg_type
+        expected_offset: 0xFD8
+
+      - name: PID7
+        type: *reg_type
+        expected_offset: 0xFDC
+
+      - name: PID0
+        type: *reg_type
+        expected_offset: 0xFE0
+
+      - name: PID1
+        type: *reg_type
+        expected_offset: 0xFE4
+
+      - name: PID2
+        type: *reg_type
+        expected_offset: 0xFE8
+
+      - name: PID3
+        type: *reg_type
+        expected_offset: 0xFEC
+
+      - name: CID0
+        type: *reg_type
+        expected_offset: 0xFF0
+
+      - name: CID1
+        type: *reg_type
+        expected_offset: 0xFF4
+
+      - name: CID2
+        type: *reg_type
+        expected_offset: 0xFF8
+
+      - name: CID3
+        type: *reg_type
+        expected_offset: 0xFFC
+
+    stream: false
+    codec: false
+    methods: false
+    unit_test: false
+    identifier: false
