@@ -1,7 +1,7 @@
 /* third-party */
 #include "hal-xmc4700/generated/structs/port5.h"
 
-void led2_state(bool state)
+inline void led2_state(bool state)
 {
     if (state)
     {
@@ -13,7 +13,7 @@ void led2_state(bool state)
     }
 }
 
-void led1_state(bool state)
+inline void led1_state(bool state)
 {
     if (state)
     {
@@ -38,8 +38,10 @@ int main(void)
     /* Configure pin (recommended before setting to output). */
 
     /* Set LED pins as outputs. */
-    XMC4700::PORT5->set_IOCR8_PC8(XMC4700::PORT5_IOCR8_PC8::value9);
-    XMC4700::PORT5->set_IOCR8_PC9(XMC4700::PORT5_IOCR8_PC9::value9);
+    XMC4700::PORT5->set_IOCR8_PC8(
+        XMC4700::PORT5_IOCR0_PC3::output_push_pull_general_purpose_output);
+    XMC4700::PORT5->set_IOCR8_PC9(
+        XMC4700::PORT5_IOCR0_PC3::output_push_pull_general_purpose_output);
 
     bool state = false;
 
