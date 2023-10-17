@@ -31,9 +31,18 @@ structs:
         type: *reg_type
         expected_offset: 0xE00
 
+      # Cortex-M4
       - name: TPR
+        description: |-
+          Enables an operating system to control the stimulus ports that are
+          accessible by user code.
         type: *reg_type
         expected_offset: 0xE40
+        fields:
+          - name: PRIVMASK
+            index: 0
+            width: 4
+            description: Bit mask to enable tracing on ITM stimulus ports.
 
       - name: TCR
         type: *reg_type
