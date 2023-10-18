@@ -1,4 +1,5 @@
 /* third-party */
+#include "generated/structs/itm.h"
 #include "hal-xmc4700/generated/structs/port5.h"
 
 inline void led2_state(bool state)
@@ -25,8 +26,24 @@ inline void led1_state(bool state)
     }
 }
 
+void write_byte(char data, size_t index = 0)
+{
+    while (!ARM::ITM->STIM[index].get_u32_FIFOREADY())
+    {
+        ;
+    }
+
+    ARM::ITM->STIM[index].u8 = data;
+}
+
 int main(void)
 {
+    ARM::ITM->set_TCR_ITMENA();
+    for (size_t i = 0; i < ARM::itm::TER_length; i++)
+    {
+        ARM::ITM->TER[i] = 0xffffffff;
+    }
+
     /* Set initial output values. */
     led1_state(false);
     led2_state(false);
@@ -50,6 +67,21 @@ int main(void)
         led1_state(state);
         led2_state(not state);
         state = not state;
+
+        write_byte('h');
+        write_byte('e');
+        write_byte('l');
+        write_byte('l');
+        write_byte('o');
+        write_byte(',');
+        write_byte(' ');
+        write_byte('w');
+        write_byte('o');
+        write_byte('r');
+        write_byte('l');
+        write_byte('d');
+        write_byte('!');
+        write_byte('\n');
     }
 
     return 0;
