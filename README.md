@@ -2,7 +2,7 @@
     =====================================
     generator=datazen
     version=3.1.3
-    hash=9785371b9d3171acb706d865fc31ddaa
+    hash=afe5f9313826d1d4a988f2682d84d905
     =====================================
 -->
 
@@ -12,6 +12,15 @@
 ![Build Status](https://github.com/vkottler/xmc/actions/workflows/yambs-project.yml/badge.svg)
 
 *A firmware project for Infineon XMC devices.*
+
+## Documentation
+
+### Generated
+
+* By [sphinx+breathe+exhale](https://vkottler.github.io/cpp/sphinx/xmc/)
+(What's [sphinx](https://www.sphinx-doc.org/en/master/) /
+[breathe](https://breathe.readthedocs.io/en/latest/) /
+[exhale](https://exhale.readthedocs.io/en/latest/)?)
 
 ## Workflow
 
