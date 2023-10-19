@@ -4,6 +4,9 @@ includes:
 
 default_target: xmc
 
+cflag_groups:
+  xmc: [-g, -ggdb]
+
 ldflag_groups:
   xmc: [-Tsrc/link.ld, -lsemihost]
 

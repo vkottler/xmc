@@ -6,11 +6,6 @@ extern "C"
 {
 /* toolchain */
 #include <semihost.h>
-
-    /*
-     * Must be set by a debugger.
-     */
-    volatile bool enable_semihosting = false;
 }
 
 inline void led2_state(bool state)
@@ -46,6 +41,11 @@ void write_byte(char data, size_t index = 0)
 
     ARM::ITM->STIM[index].u8 = data;
 }
+
+/*
+ * Must be set by a debugger.
+ */
+volatile bool enable_semihosting = false;
 
 int main(void)
 {
