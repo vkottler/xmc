@@ -14,7 +14,7 @@ compiles:
 groups:
   - name: all
     dependencies:
-      - renders-env
       - groups-license
       - groups-funding
       - groups-yambs-native-renders
+      - groups-yambs-embedded-renders

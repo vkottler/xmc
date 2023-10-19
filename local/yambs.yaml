@@ -5,7 +5,7 @@ includes:
 default_target: xmc
 
 ldflag_groups:
-  xmc: [-Tsrc/link.ld]
+  xmc: [-Tsrc/link.ld, -lsemihost]
 
 variants:
   xmc:

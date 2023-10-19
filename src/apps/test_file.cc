@@ -2,6 +2,17 @@
 #include "generated/structs/itm.h"
 #include "hal-xmc4700/generated/structs/port5.h"
 
+extern "C"
+{
+/* toolchain */
+#include <semihost.h>
+
+    /*
+     * Must be set by a debugger.
+     */
+    volatile bool enable_semihosting = false;
+}
+
 inline void led2_state(bool state)
 {
     if (state)
@@ -62,26 +73,47 @@ int main(void)
 
     bool state = false;
 
+    int iterations = 0;
     while (true)
     {
-        led1_state(state);
-        led2_state(not state);
-        state = not state;
+        if (iterations % 100000 == 0)
+        {
+            led1_state(state);
+            led2_state(not state);
+            state = not state;
+        }
 
-        write_byte('h');
-        write_byte('e');
-        write_byte('l');
-        write_byte('l');
-        write_byte('o');
-        write_byte(',');
-        write_byte(' ');
-        write_byte('w');
-        write_byte('o');
-        write_byte('r');
-        write_byte('l');
-        write_byte('d');
-        write_byte('!');
-        write_byte('\n');
+        if (iterations % 10000 == 0)
+        {
+            write_byte('H');
+            write_byte('e');
+            write_byte('l');
+            write_byte('l');
+            write_byte('o');
+            write_byte(',');
+            write_byte(' ');
+            write_byte('w');
+            write_byte('o');
+            write_byte('r');
+            write_byte('l');
+            write_byte('d');
+            write_byte('!');
+            write_byte(' ');
+            write_byte('(');
+            write_byte('I');
+            write_byte('T');
+            write_byte('M');
+            write_byte(')');
+            write_byte('\n');
+
+            if (enable_semihosting)
+            {
+                sys_semihost_write0("Hello, world! (semihost)\n");
+            }
+        }
+
+        /* try checking user input here? */
+        iterations++;
     }
 
     return 0;
