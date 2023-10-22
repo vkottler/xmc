@@ -8,7 +8,7 @@ cflag_groups:
   xmc: [-g, -ggdb]
 
 ldflag_groups:
-  xmc: [-Tsrc/link.ld, -lsemihost]
+  xmc: [-Tsrc/link.ld, -lsemihost, --oslib=semihost]
 
 variants:
   xmc:
