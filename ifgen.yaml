@@ -1,4 +1,6 @@
 ---
-namespace: [ARM]
 includes:
-  - ifgen/itm.yaml
+  - config/python/ifgen/hal.yaml
+  - config/python/ifgen/itm/include.yaml
+
+namespace: [ARM]
