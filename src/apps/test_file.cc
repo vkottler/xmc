@@ -105,7 +105,6 @@ int main(void)
             printf(prompt);
         }
 
-        /* try checking user input here? */
         iterations++;
     }
 
