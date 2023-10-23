@@ -17,3 +17,4 @@ dist
 third-party
 toolchains
 .env
+.vimrc
